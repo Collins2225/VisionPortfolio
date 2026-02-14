@@ -402,6 +402,41 @@
             font-weight: 600;
         }
 
+        /* Profile Photo Styling */
+        .profile-photo-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .profile-photo {
+            position: relative;
+            width: 100%;
+            max-width: 450px;
+            margin: 0 auto;
+        }
+
+        .profile-photo-frame {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 212, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .profile-photo-frame:hover {
+            border-color: var(--accent-cyan);
+            box-shadow: 0 12px 48px rgba(0, 212, 255, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .profile-photo-frame img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
         .focus-areas {
             display: grid;
             gap: 1.5rem;
@@ -733,6 +768,10 @@
             .section-title {
                 font-size: 2.5rem;
             }
+
+            .profile-photo {
+                max-width: 350px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -839,18 +878,25 @@
                     <p>What excites me most is the <span class="highlight">full pipeline</span>: from raw sensor data to actionable intelligence. I enjoy working on challenging problems that require both theoretical understanding and practical implementation, whether that's training custom vision models, optimizing ROS perception nodes, or deploying AI on edge devices.</p>
                     <p>My goal is to contribute to the next generation of <span class="highlight">autonomous systems</span> that can navigate, manipulate, and understand complex real-world environments.</p>
                 </div>
-                <div class="focus-areas fade-in">
-                    <div class="focus-card">
-                        <h3>Vision & Perception</h3>
-                        <p>Object detection, semantic segmentation, depth estimation, and 3D reconstruction for robotic perception</p>
+                <div class="profile-photo-container fade-in">
+                    <div class="profile-photo">
+                        <div class="profile-photo-frame">
+                            <img src="profile-photo.jpg" alt="Profile Photo">
+                        </div>
                     </div>
-                    <div class="focus-card">
-                        <h3>Machine Learning</h3>
-                        <p>Training and deploying deep learning models for real-time inference on autonomous systems</p>
-                    </div>
-                    <div class="focus-card">
-                        <h3>Robotics Software</h3>
-                        <p>ROS development, sensor fusion, SLAM, and integration of perception with motion planning</p>
+                    <div class="focus-areas">
+                        <div class="focus-card">
+                            <h3>Vision & Perception</h3>
+                            <p>Object detection, semantic segmentation, depth estimation, and 3D reconstruction</p>
+                        </div>
+                        <div class="focus-card">
+                            <h3>Machine Learning</h3>
+                            <p>Training and deploying deep learning models for real-time inference</p>
+                        </div>
+                        <div class="focus-card">
+                            <h3>Robotics Software</h3>
+                            <p>ROS development, sensor fusion, SLAM, and motion planning integration</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1053,7 +1099,7 @@
             <div class="contact-content fade-in">
                 <p>I'm actively seeking opportunities in robotics perception, autonomous systems, and AI research. Whether it's internships, research collaborations, or full-time positions—I'd love to connect and explore how we can work together.</p>
                 <div class="contact-links">
-                    <a href="mailto:your.email@example.com" class="contact-btn">
+                    <a href="/cdn-cgi/l/email-protection#a3daccd6d18dc6cec2cacfe3c6dbc2ced3cfc68dc0ccce" class="contact-btn">
                         📧 Email Me
                     </a>
                     <a href="https://github.com/yourusername" class="contact-btn" target="_blank">
@@ -1077,7 +1123,7 @@
         </div>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1126,11 +1172,4 @@
 
             navLinks.forEach(link => {
                 link.style.color = '';
-                if (link.getAttribute('href').slice(1) === current) {
-                    link.style.color = 'var(--accent-cyan)';
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+                if (link.getAttribute('href').slice(1)
