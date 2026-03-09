@@ -727,17 +727,137 @@
         /* Footer */
         footer {
             background: var(--bg-primary);
-            padding: 2rem;
-            text-align: center;
+            padding: 4rem 2rem 2rem;
             border-top: 1px solid rgba(0, 212, 255, 0.2);
             position: relative;
             z-index: 2;
         }
 
-        footer p {
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-about h3 {
+            color: var(--accent-cyan);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .footer-about p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .footer-links h4 {
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.7rem;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-cyan);
+        }
+
+        .footer-links a::before {
+            content: '▹';
+            color: var(--accent-green);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--bg-tertiary);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .social-icon:hover {
+            background: rgba(0, 212, 255, 0.1);
+            border-color: var(--accent-cyan);
+            color: var(--accent-cyan);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 212, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom p {
             color: var(--text-secondary);
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+        }
+
+        .footer-credits {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        .footer-credits a {
+            color: var(--accent-cyan);
+            text-decoration: none;
+        }
+
+        .footer-credits a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 1024px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
         }
 
         /* Responsive Design */
@@ -985,6 +1105,39 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <div class="project-visual">
+                        <div class="project-icon" style="color: var(--accent-cyan);">🤸</div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-tag">Pose Estimation · Human-Robot Interaction · AI</span>
+                        <h3>Human Pose Estimation for Robot Imitation</h3>
+                        <p class="project-desc">Developed a pose estimation system enabling a simulated humanoid robot to imitate human movements in real-time. The system captures human skeletal keypoints using computer vision algorithms and translates them into corresponding robotic joint commands. This project demonstrates advanced human-robot interaction, bridging the gap between human motion and robotic control for applications in teleoperation, physical therapy assistance, and intuitive robot programming.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Pose Estimation</span>
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">Robotics</span>
+                            <span class="tech-tag">Motion Mapping</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">Real-time</span>
+                                <span class="metric-label">Imitation</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">Human-Robot</span>
+                                <span class="metric-label">Interaction</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">Motion</span>
+                                <span class="metric-label">Mapping</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1076,7 +1229,7 @@
             <div class="contact-content">
                 <p>I'm actively seeking opportunities in robotics perception, autonomous systems, and AI research. Whether it's internships, research collaborations, or full-time positions—I'd love to connect and explore how we can work together.</p>
                 <div class="contact-links">
-                    <a href="/cdn-cgi/l/email-protection#9dfef2f1f1f4f3eefef5e8f6eae8f0fcaeadddfaf0fcf4f1b3fef2f0" class="contact-btn">
+                    <a href="mailto:collinschukwuma30@gmail.com" class="contact-btn">
                         📧 Email Me
                     </a>
                     <a href="https://github.com/collins2225" class="contact-btn" target="_blank">
@@ -1098,8 +1251,44 @@
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>© 2026 Robotics Perception Portfolio • Built with passion for intelligent systems</p>
+        <div class="footer-content">
+            <div class="footer-about">
+                <h3>PERCEPTION<span style="color: var(--accent-green);">.AI</span></h3>
+                <p>Mechatronics & Robotics Engineering student specializing in computer vision, AI, and autonomous systems. Building the next generation of intelligent robotic systems that perceive, understand, and interact with the world.</p>
+                <div class="footer-social">
+                    <a href="mailto:collinschukwuma30@gmail.com" class="social-icon" title="Email">📧</a>
+                    <a href="https://github.com/collins2225" class="social-icon" target="_blank" title="GitHub">💻</a>
+                    <a href="https://www.linkedin.com/in/collins-njoku-6667443b4" class="social-icon" target="_blank" title="LinkedIn">🔗</a>
+                    <a href="https://twitter.com/Collins659088" class="social-icon" target="_blank" title="Twitter">🐦</a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#interests">Research Interests</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="Collins-Njoku-CV.pdf" target="_blank">Download CV</a></li>
+                    <li><a href="https://github.com/collins2225" target="_blank">GitHub Projects</a></li>
+                    <li><a href="https://www.linkedin.com/in/collins-njoku-6667443b4" target="_blank">LinkedIn Profile</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2026 Collins Njoku • Built with passion for intelligent systems</p>
+            <div class="footer-credits">
+                <span>Belgorod State University | Graduation 2027</span>
+            </div>
         </div>
     </footer>
 
@@ -1123,5 +1312,4 @@
             const navLinks = document.querySelectorAll('nav a');
             
             let current = '';
-            sections.forEach(section => {
-                const section
+            sections.
